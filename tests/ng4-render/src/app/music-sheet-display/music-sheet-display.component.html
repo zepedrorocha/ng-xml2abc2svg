@@ -1,0 +1,20 @@
+<div class="flex-container">
+  <div class="flex-left">
+    <h2>xml2abc <small>v64</small> | abc2svg <small>v1.12.10</small></h2>
+    <button (click)="path.value='assets/MozaVeilSample.xml'; readLocalFile(path.value);" #path>1</button>
+    <button (click)="path.value='assets/TELMI.test.01.all-in-1.xml'; readLocalFile(path.value);">2</button>
+    <span>{{path.value}}</span>
+    <div>or</div>
+    <input type='file' accept='text/xml' (change)="openFile($event)"><br><br>
+
+    <h2 *ngIf="abc.errors">xml2abc errors</h2>
+    <div  id="abc-error" [innerText]="abc.errors"></div>
+    <br>
+    <textarea cols="80" rows="15" id="abc-text" (input)="onTextAreaInput($event.srcElement.value)" [innerHTML]="abc.text"></textarea>
+    <h2 *ngIf="abcsvg.errors">xml2svg errors</h2>
+    <pre  id="svg-error" [innerText]="abcsvg.errors"></pre>
+  </div>
+  <div class="flex-right">
+    <div id="svg-render" [innerHTML]="abcsvg.result | safeHtml"></div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+/* svg style é importante para o auto-resize do render, resto dos css sao puramente cosmetic stuff para este prototipo */
+
+/*
+workaround to apply a working svg style inside a ng2 component
+https://stackoverflow.com/questions/36265026/angular-2-innerhtml-styling
+*/
+:host /deep/ svg {
+  width: 100%;
+  height: 100%;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+}
+
+.flex-left {
+    width: 40%;
+    margin: 10px;
+}
+
+.flex-right {
+    width: 60%;
+    margin: 10px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+#abc-error,
+#svg-error {
+  max-height: 180px;
+  overflow-y: scroll;
+}
