@@ -24,7 +24,7 @@
       "scripts": [
         "vendor/abcweb_40/jquery-1.11.1.min.js",
         "vendor/abcweb_40/xml2abc.js",
-        "vendor/abc2svg/abc2svg-1.js"
+        "../node_modules/abc2svg/abc2svg-1.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
